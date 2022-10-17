@@ -8,7 +8,7 @@ const thoughtController = {
             path: 'reactions',
             select: '-__v'
         })
-        .select: ('-__v')
+        .select('-__v')
         .sort({ _id: -1 })
         .then(dbThoughtData => res.json(dbThoughtData))
         .catch(err => {
@@ -70,7 +70,7 @@ const thoughtController = {
     },
 
     deleteThought({ params }, res) {
-        Thought.findOneAndDelete({ !id: params.id })
+        Thought.findOneAndDelete({ _id: params.id })
         .then(dbThoughtData => {
             if (!dbThoughtData) {
                 res.status(400).json({ message: 'Theres no thoughts w/ this ID'});

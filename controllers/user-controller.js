@@ -102,11 +102,11 @@ const userController = {
         )
         .then((dbUserData) => {
             if (!dbUserData) {
-                res.status(400).json({ message: 'theres no user w/ this Id' }),
+                res.status(400).json({ message: 'theres no user w/ this Id' });
                 return;
             }
             res.json(dbUserData);
-        }),
+        })
         .catch(err => {
             console.log(err);
             res.sendStatus(500).json(err);
