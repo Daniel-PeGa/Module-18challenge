@@ -12,7 +12,8 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        match: [/.+@.+\..+/]
+        validate: [validateEmail, 'Please fill a valid email address'],
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     thoughts: [
         {
@@ -26,6 +27,12 @@ const UserSchema = new Schema({
         virtuals: true
     },
     id: false
+},
+{
+    friends: {
+        type: Schema.Types.ObjectId,
+        ref: 'Friends'
+    }
 }
 );
 
