@@ -26,7 +26,8 @@ And thats it!!!
 ## How to use it?
 
 Just watch the following video run-through:
-[INSERTA EL VIDEO AQUI!]
+https://youtu.be/LwVKSfyov4M
+
 
 ## User Story
 
