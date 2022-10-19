@@ -37,7 +37,7 @@ const userController = {
             res.json(dbUserData);
         })
         .catch(err => {
-            console.log(err);
+            console.log(err, 'This is the error');
             res.sendStatus(500).json(err);
         });
     },
