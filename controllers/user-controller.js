@@ -18,6 +18,10 @@ const userController = {
             path: 'thoughts',
             select: '-__v'
         })
+        .populate({
+            path: 'friends',
+            select: '-__v'
+        })
         .then(dbUserData => {
             if (!dbUserData) {
                 res.sendStatus(400).json({ message: 'Theres no user w this Id' });
