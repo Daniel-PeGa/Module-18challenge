@@ -4,7 +4,7 @@ const apiRoutes = require('./api');
 router.use('/api', apiRoutes);
 
 router.use((req, res) => {
-    res.sendStatus(400).send('ERROR');
+    res.status(400).send('ERROR');
 });
 
 module.exports = router;
